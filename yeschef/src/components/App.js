@@ -1,7 +1,16 @@
 import React from "react";
+import RecipeList from "./RecipeList"
+import NewRecipeForm from "./NewRecipeForm";
+import NavBar from "./NavBar";
 
 function App(){
-    return (<p>App is now connected</p>)
+    return (
+        <div>
+            <NavBar />
+            <NewRecipeForm />
+            <RecipeList />
+        </div>
+    )
 }
 
 export default App
