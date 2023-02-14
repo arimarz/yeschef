@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.recipe-card {
+  width: auto;
+  height: auto;
+  border: 3px black
+}
+
+.recipe-card-content {
+  padding: 20px;
+}
+
+.instructions {
+  font-size: x-small;
+}
+
+.ingredients {
+  font-size: x-small;
+}
+
+.image {
+  max-width: 100px; 
+  height: 100px; 
+  width: auto; 
+}
+
+.veg-image {
+  max-width: 100px; 
+  height: 100px; 
+  width: auto; 
+}

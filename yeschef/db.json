@@ -1,12 +1,211 @@
 {
-    "recipes": [
-      {
-        "id": 1,
-        "name": "Burger",
-        "image": "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F220428140436-04-classic-american-hamburgers.jpg",
-        "ingredients": "stuff",
-        "instructions": "things",
-        "cuisine": "American"
-      }
-    ]
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Pancakes",
+      "image": "https://www.allrecipes.com/thmb/kvvETNZfOtAptH69gUsK6FaKRKA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/21014-Good-old-Fashioned-Pancakes-mfs_001-1fa26bcdedc345f182537d95b6cf92d8.jpg",
+      "description": "Fluffy pancakes made with simple ingredients.",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "2 tbsp sugar",
+        "2 tsp baking powder",
+        "1 tsp salt",
+        "2 eggs",
+        "1 1/2 cups milk",
+        "2 tbsp melted butter"
+      ],
+      "instructions": [
+        "In a large bowl, whisk together the flour, sugar, baking powder, and salt.",
+        "In a separate bowl, beat the eggs, then add the milk and melted butter.",
+        "Add the wet ingredients to the dry ingredients and stir until just combined.",
+        "Heat a non-stick pan over medium heat and spoon batter onto the pan, cooking until bubbles form on the surface.",
+        "Flip the pancake and cook until both sides are golden brown."
+      ],
+      "cuisine": "American",
+      "vegetarian": true,
+      "vegan": false
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti Carbonara",
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?quality=90&webp=true&resize=300,272",
+      "description": "A classic Italian dish made with spaghetti, eggs, and pancetta.",
+      "ingredients": [
+        "1 lb spaghetti",
+        "4 oz pancetta, diced",
+        "4 eggs",
+        "1 cup freshly grated Parmesan cheese",
+        "1 tsp black pepper"
+      ],
+      "instructions": [
+        "Cook the spaghetti in a large pot of boiling salted water until al dente.",
+        "In a separate pan, cook the pancetta until crisp.",
+        "In a bowl, whisk together the eggs, Parmesan cheese, and pepper.",
+        "Drain the spaghetti and add it to the pan with the pancetta.",
+        "Remove the pan from heat and add the egg mixture, tossing until the spaghetti is coated.",
+        "Serve immediately, topped with additional Parmesan cheese and black pepper."
+      ],
+      "cuisine": "Italian",
+      "vegetarian": true,
+      "vegan": false
+    },
+    {
+      "id": 3,
+      "name": "Spaghetti Bolognese",
+      "image": "https://www.errenskitchen.com/wp-content/uploads/2015/02/Quick-Easy-Spaghetti-Bolognese2-1-650x433.jpg",
+      "description": "A classic Italian dish made with a meaty tomato sauce and spaghetti noodles.",
+      "ingredients": [
+        "1 lb ground beef",
+        "1 onion, diced",
+        "3 garlic cloves, minced",
+        "1 can (28 oz) crushed tomatoes",
+        "1 tsp dried basil",
+        "1 tsp dried oregano",
+        "1 tsp sugar",
+        "Salt and pepper to taste",
+        "1 lb spaghetti noodles"
+      ],
+      "instructions": [
+        "In a large pan, brown the ground beef over medium heat.",
+        "Add the onion and garlic to the pan and cook until softened.",
+        "Stir in the crushed tomatoes, basil, oregano, sugar, salt, and pepper.",
+        "Bring the sauce to a boil, then reduce heat to low and let simmer for 15 minutes.",
+        "While the sauce is simmering, cook the spaghetti noodles according to package instructions.",
+        "Drain the noodles and serve with the Bolognese sauce spooned on top."
+      ],
+      "cuisine": "Italian",
+      "vegetarian": false,
+      "vegan": false
+    },
+    {
+      "id": 4,
+      "name": "Chicken Tikka Masala",
+      "image": "https://pinchofyum.com/cdn-cgi/image/width=680,height=99999,fit=scale-down/wp-content/uploads/Chicken-Tikka-Masala.jpg",
+      "description": "A popular Indian dish made with marinated chicken in a creamy tomato sauce.",
+      "ingredients": [
+        "1 lb boneless chicken breasts, cut into bite-sized pieces",
+        "1 cup plain yogurt",
+        "1 tbsp garam masala",
+        "1 tsp paprika",
+        "1 tsp cumin",
+        "1 tsp coriander",
+        "1 tsp turmeric",
+        "1 tsp cayenne pepper",
+        "1 onion, diced",
+        "3 garlic cloves, minced",
+        "1 can (28 oz) diced tomatoes",
+        "1 cup heavy cream",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "In a large bowl, mix together the chicken, yogurt, garam masala, paprika, cumin, coriander, turmeric, and cayenne pepper.",
+        "Cover the bowl and let the chicken marinate in the refrigerator for at least 1 hour.",
+        "Preheat the grill to high heat and grill the chicken until cooked through.",
+        "In a large pan, sauté the onion and garlic until softened.",
+        "Stir in the diced tomatoes and bring to a boil.",
+        "Reduce heat to low and let the sauce simmer for 15 minutes.",
+        "Stir in the heavy cream and season with salt and pepper to taste.",
+        "Add the grilled chicken to the sauce and let heat through.",
+        "Serve over rice or with naan bread."
+      ],
+      "cuisine": "Indian",
+      "vegetarian": false,
+      "vegan": false
+    },
+    {
+      "id": 5,
+      "name": "Chicken Stir Fry",
+      "image": "https://www.allrecipes.com/thmb/MrARb3JSqldom4E30bLGK2mGQxM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/223382_chicken-stir-fry_Rita-1x1-1-b6b835ccfc714bb6a8391a7c47a06a84.jpg",
+      "description": "A delicious and healthy chicken stir fry with vegetables and a flavorful sauce.",
+      "ingredients": [
+        "1 pound boneless, skinless chicken breast, sliced into thin strips",
+        "1 tablespoon oil",
+        "1 onion, sliced",
+        "2 cloves garlic, minced",
+        "2 carrots, sliced",
+        "1 red bell pepper, sliced",
+        "1 yellow bell pepper, sliced",
+        "1 cup snow peas",
+        "2 tablespoons soy sauce",
+        "1 tablespoon cornstarch",
+        "2 tablespoons water",
+        "2 tablespoons hoisin sauce",
+        "1 teaspoon sesame oil"
+      ],
+      "instructions": [
+        "In a small bowl, whisk together the soy sauce, cornstarch, water, hoisin sauce, and sesame oil.",
+        "Heat the oil in a large wok or frying pan over high heat.",
+        "Add the chicken and cook for 3-4 minutes, until browned.",
+        "Add the onion, garlic, carrots, bell peppers, and snow peas and stir fry for 2-3 minutes.",
+        "Pour in the sauce and continue to stir fry for another minute, until the sauce has thickened and the vegetables are tender.",
+        "Serve the chicken stir fry over steamed rice."
+      ],
+      "cuisine": "Asian",
+      "vegetarian": false,
+      "vegan": false
+    }, 
+    {
+      "id": 6,
+      "name": "Veggie Stir Fry",
+      "image": "https://therecipecritic.com/wp-content/uploads/2019/08/vegetable_stir_fry.jpg",
+      "description": "A colorful and flavorful stir fry with your choice of vegetables.",
+      "ingredients": [
+        "2 tablespoons oil",
+        "2 garlic cloves, minced",
+        "1 onion, sliced",
+        "1 red bell pepper, sliced",
+        "1 yellow squash, sliced",
+        "1 zucchini, sliced",
+        "1 cup sliced mushrooms",
+        "1 teaspoon ginger, minced",
+        "2 tablespoons soy sauce",
+        "1 tablespoon cornstarch",
+        "1/4 cup water"
+      ],
+      "instructions": [
+        "Heat oil in a wok or large skillet over medium-high heat.",
+        "Add the garlic and onion, and stir fry for 30 seconds.",
+        "Add the bell pepper, yellow squash, zucchini, and mushrooms, and stir fry for 2-3 minutes.",
+        "Stir in the ginger, soy sauce, cornstarch, and water.",
+        "Stir fry until the vegetables are just tender and the sauce has thickened."
+      ],
+      "cuisine": "Asian",
+      "vegetarian": true,
+      "vegan": true
+    },
+    {
+      "id": 7,
+      "name": "Spicy Vegan Tacos",
+      "image": "https://data.thefeedfeed.com/static/2021/04/29/1619713870608adf4eac7b4.webp",
+      "description": "Spicy and flavorful tacos filled with lentils and sweet potatoes.",
+      "ingredients": [
+        "1 tablespoon olive oil",
+        "1 red onion, diced",
+        "1 red bell pepper, diced",
+        "1 teaspoon chili powder",
+        "1 teaspoon ground cumin",
+        "1 teaspoon smoked paprika",
+        "1 cup dried green lentils, rinsed",
+        "2 cups vegetable broth",
+        "1 sweet potato, peeled and diced",
+        "1 avocado, diced",
+        "1 lime, juiced",
+        "8 corn tortillas",
+        "1/2 cup cilantro, chopped"
+      ],
+      "instructions": [
+        "Heat the oil in a large saucepan over medium heat.",
+        "Add the onion and bell pepper, and cook until softened.",
+        "Stir in the chili powder, cumin, and paprika, and cook for 1 minute.",
+        "Stir in the lentils and broth, and bring to a boil.",
+        "Reduce heat to low, cover, and simmer for 20-25 minutes.",
+        "Stir in the sweet potato, and cook for an additional 10 minutes.",
+        "Mash the avocado with the lime juice, and spread on the tortillas.",
+        "Spoon the lentil mixture onto the tortillas, and sprinkle with cilantro."
+      ],
+      "cuisine": "Mexican",
+      "vegetarian": true,
+      "vegan": true
+    }
+  ]
   }
