@@ -21,7 +21,7 @@
         "Heat a non-stick pan over medium heat and spoon batter onto the pan, cooking until bubbles form on the surface.",
         "Flip the pancake and cook until both sides are golden brown."
       ],
-      "cuisine": "American",
+      "cuisine": "AMERICAN",
       "vegetarian": true,
       "vegan": false
     },
@@ -143,7 +143,7 @@
       "cuisine": "Asian",
       "vegetarian": false,
       "vegan": false
-    }, 
+    },
     {
       "id": 6,
       "name": "Veggie Stir Fry",
@@ -208,4 +208,4 @@
       "vegan": true
     }
   ]
-  }
+}

@@ -1,12 +1,35 @@
-function SingleRecipe({recipes}){
+import{useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+
+function SingleRecipe(){
+  const[recipe, setRecipe]= useState(null)
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const{ id } = useParams()
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/recipes/${id}`)
+    .then((r)=> r.json())
+    .then((recipe)=> {
+      setRecipe(recipe);
+      setIsLoaded(!isLoaded);
+    });
+  }, [id])
+
+  if (!isLoaded) return <h1>Loading...</h1>;
+
+  console.log(recipe)
+
+  const {name, image, ingredients, instructions, cuisine, vegan, vegetarian} = recipe
 
     return(
-        recipes.map((recipe)=> {
-        return <div>
+        <div>
+          <h2>{name}</h2>
+        <img className="image" src={image} alt={name} />
         <div className="ingredients">
         <h3>Ingredients:</h3>
         <ul>
-          {recipe.ingredients.map((ingredient, index) => (
+          {ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
@@ -14,15 +37,20 @@ function SingleRecipe({recipes}){
       <div className="instructions">
         <h3>Instructions:</h3>
         <ul>
-          {recipe.instructions.map((instruction, index) => (
+          {instructions.map((instruction, index) => (
             <li key={index}>{instruction}</li>
           ))}
         </ul>
       </div>
-      {recipe.vegetarian ? <img className= "veg-image" src= "https://img.myloview.com/posters/vegetarian-food-diet-icon-organic-bio-eco-symbol-no-meat-vegetarian-healthy-and-nonviolent-food-round-green-vector-illustration-with-ribbon-and-leaves-for-stickers-labels-and-logos-700-179938004.jpg"/> : null}
-      {recipe.vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg"/> : null }
-      </div>}
-    ))
+      <span>{vegetarian ? <img className= "veg-image" src= "https://img.myloview.com/posters/vegetarian-food-diet-icon-organic-bio-eco-symbol-no-meat-vegetarian-healthy-and-nonviolent-food-round-green-vector-illustration-with-ribbon-and-leaves-for-stickers-labels-and-logos-700-179938004.jpg"/> : null}
+      </span>
+      <span>{vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg"/> : null }
+      </span>
+      <p>
+          <strong>Cuisine:</strong> {cuisine}
+        </p>
+      </div>
+    )
 }
 
 export default SingleRecipe
