@@ -1,7 +1,8 @@
 import {useState} from "react"
+import { useHistory } from "react-router-dom";
 
-function NewRecipeForm(){
-
+function NewRecipeForm({onAddRecipe}){
+    const history = useHistory();
     const initialState = {
         name: "",
         description: "",
@@ -50,9 +51,17 @@ function NewRecipeForm(){
         fetch("http://localhost:3001/recipes", configObj)
           .then((resp) => resp.json())
           .then((data) => {
-            console.log(data);
-            // onAddRecipe(data);
-            // history.push("/recipes")
+            onAddRecipe(data);
+            setFormData({name: "",
+            description: "",
+            ingredients: "",
+            instructions: "",
+            cuisine: "",
+            image: "",
+            vegan: false,
+            vegetarian: false,
+          });
+            history.push("/recipes")
           });
       };
 

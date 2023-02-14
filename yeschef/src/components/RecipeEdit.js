@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
 
 function RecipeEdit({onUpdatedRecipe}){
 
@@ -17,6 +17,8 @@ function RecipeEdit({onUpdatedRecipe}){
     const [formData, setFormData] = useState(initialState);
 
     const {name, description, ingredients, instructions, cuisine, image, vegan, vegetarian} = formData;
+
+    const history = useHistory()
 
     const{id} = useParams();
 
@@ -60,8 +62,7 @@ function RecipeEdit({onUpdatedRecipe}){
           .then((resp) => resp.json())
           .then((updatedRecipe) => {
             onUpdatedRecipe(updatedRecipe);
-            // onAddRecipe(data);
-            // history.push("/recipes")
+            history.push(`/recipes/${id}`)
           });
       };
 
