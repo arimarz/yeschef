@@ -4,22 +4,40 @@ function NewRecipeForm(){
 
     const initialState = {
         name: "",
+        description: "",
         ingredients: "",
         instructions: "",
         cuisine: "",
         image: "",
+        vegan: false,
+        vegetarian: false,
       };
 
-    const [formData, setFormData] = useState(initialState)
+    const [formData, setFormData] = useState(initialState);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((formData) => ({ ...formData, [name]: value }));
-      };
+    const {name, description, ingredients, instructions, cuisine, image, vegan, vegetarian} = formData;
 
-    console.log(formData);
+    function handleVeganCheckbox(){
+        setFormData(() => ({ ...formData, "vegan": !vegan }));
+    }
 
-    const handleSubmit = (e) => {
+    function handleVegetarianCheckbox(){
+        setFormData(() => ({ ...formData, "vegetarian": !vegetarian }));
+    }
+
+    function handleChange (e) {
+        if(e.target.type === "text" || "textbox"){
+            const { name, value } = e.target;
+            setFormData(() => ({ ...formData, [name]: value }));
+        } else if (e.target.type === "checkbox"){
+            const { name, checked } = e.target;
+            setFormData(() => ({ ...formData, [name]: !checked }));
+        }
+    };
+
+    // console.log(formData);
+
+    function handleSubmit(e){
         e.preventDefault();
         const configObj = {
           method: "POST",
@@ -40,12 +58,40 @@ function NewRecipeForm(){
 
     return(
         <form onSubmit={handleSubmit}>
-           <input type="text" id="name" name="name" onChange={handleChange}/>
-           <input type="text" id="ingredients" name="ingredients" onChange={handleChange}/>
-           <input type="text" id="instructions" name="instructions" onChange={handleChange}/>
-           <input type="text" id="cuisine" name="cuisine" onChange={handleChange}/>
-           <input type="text" id="image" name="image" onChange={handleChange}/>
-           <button type="submit">Submit</button>
+            <ul>
+                <li>
+                    <label for="name">Recipe Name: </label>
+                    <input type="text" id="name" name="name" onChange={handleChange} value={name}/>
+                </li>
+                <li>
+                    <label for="description">Description: </label>
+                    <input type="text" id="description" name="description" onChange={handleChange} value={description}/>
+                </li>
+                <li>
+                    <label for="ingredients">Ingredients: </label>
+                    <input type="textbox" id="ingredients" name="ingredients" onChange={handleChange} value={ingredients}/>
+                </li>
+                <li>
+                    <label for="instructions">Instructions: </label>
+                    <input type="textbox" id="instructions" name="instructions" onChange={handleChange} value={instructions}/>
+                </li>
+                <li>
+                    <label for="cuisine">Type of Cuisine: </label>
+                    <input type="text" id="cuisine" name="cuisine" onChange={handleChange} value={cuisine}/>
+                </li>
+                <li>
+                    <label for="image">Recipe Image Link: </label>
+                    <input type="text" id="image" name="image" onChange={handleChange} value={image}/>
+                </li>
+
+                <label for="vegan">Vegan</label>
+                <input type="checkbox" id="vegan" name="vegan" onChange={handleVeganCheckbox} checked={vegan}/>
+
+                <label for="vegetarian">Vegetarian</label>
+                <input type="checkbox" id="vegetarian" name="vegetarian" onChange={handleVegetarianCheckbox} checked={vegetarian}/>
+
+                <button type="submit">Submit</button>
+           </ul>
         </form>
     )
 }
