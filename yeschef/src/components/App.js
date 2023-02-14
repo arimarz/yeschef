@@ -1,7 +1,10 @@
+import {Switch, Route} from 'react-router-dom';
 import React, {useEffect, useState} from "react";
+
 import RecipeList from "./RecipeList"
 import NewRecipeForm from "./NewRecipeForm";
 import NavBar from "./NavBar";
+import Home from "./Home"
 import SingleRecipe from "./SingleRecipe"
 
 function App(){
@@ -19,9 +22,29 @@ function App(){
     return (
         <div>
             <NavBar />
-            <NewRecipeForm />
-            <RecipeList recipes={recipes}/>
-            <SingleRecipe recipes={recipes}/>
+            <Switch>
+                
+                <Route exact path="/">
+                    <Home />
+                </Route>
+
+                {/* <Route path="/recipes/:id/edit">
+                    <RecipeEdit />
+                </Route> */}
+
+                <Route path="/recipes/new">
+                    <NewRecipeForm />
+                </Route>
+
+                <Route path="/recipes/:id">
+                    <SingleRecipe recipes={recipes}/>
+                </Route>
+
+                <Route path="/recipes">
+                    <RecipeList recipes={recipes}/>
+                </Route>
+
+            </Switch>
         </div>
     )
 }

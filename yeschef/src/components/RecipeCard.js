@@ -1,4 +1,4 @@
-import { Card } from "semantic-ui-react";
+// import { Card } from "semantic-ui-react";
 
 function RecipeCard({ name, image, ingredients, instructions, cuisine }) {
   return (
