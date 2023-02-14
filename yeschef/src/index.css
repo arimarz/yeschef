@@ -41,3 +41,44 @@ code {
   height: 100px; 
   width: auto; 
 }
+
+.button {
+  padding: 0.5rem 1rem;
+  font-weight: 1000;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border: 2px dotted orange;
+  transition: background-color 0.5s;
+}
+
+.button.active {
+  color: black;
+  background-color: dodgerblue;
+  border: 2px solid orange;
+}
+
+nav {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.navigation * {
+  margin: 0 0.5rem;
+}
+
+.title {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 100;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border: 5px dotted orange;
+}
+
+a {
+  text-decoration: none;
+}

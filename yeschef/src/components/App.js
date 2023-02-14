@@ -10,7 +10,6 @@ import RecipeEdit from "./RecipeEdit"
 
 function App(){
     const [recipes, setRecipes] = useState([])
-
     useEffect(() => {
         fetch("http://localhost:3001/recipes")
           .then((resp) => resp.json())
@@ -18,6 +17,7 @@ function App(){
             setRecipes(data)
         });
     }, []);
+
 
     function onUpdatedRecipe(updatedRecipe) {
         const updatedRecipes = recipes.map((ogRecipe) => {
@@ -31,9 +31,15 @@ function App(){
         };
     
 
+    const [searchText, setSearchText] = useState("")
+
+    const recipesToDisplay = recipes.filter((recipe) => recipe.name.toLowerCase().includes(searchText.toLowerCase()))
+    console.log(recipesToDisplay);
+
+
     return (
         <div>
-            <NavBar />
+            <NavBar setSearchText={setSearchText} searchText={searchText} />
             <Switch>
                 
                 <Route exact path="/">
@@ -53,7 +59,7 @@ function App(){
                 </Route>
 
                 <Route path="/recipes">
-                    <RecipeList recipes={recipes}/>
+                    <RecipeList recipes={recipesToDisplay}/>
                 </Route>
 
             </Switch>
