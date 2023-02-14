@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import RecipeList from "./RecipeList"
 import NewRecipeForm from "./NewRecipeForm";
 import NavBar from "./NavBar";
+import SingleRecipe from "./SingleRecipe"
 
 function App(){
-
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
@@ -20,7 +20,8 @@ function App(){
         <div>
             <NavBar />
             <NewRecipeForm />
-            <RecipeList />
+            <RecipeList recipes={recipes}/>
+            <SingleRecipe recipes={recipes}/>
         </div>
     )
 }
