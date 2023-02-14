@@ -1,6 +1,7 @@
-import {useState} from "react"
+import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom"
 
-function NewRecipeForm(){
+function RecipeEdit({onUpdatedRecipe}){
 
     const initialState = {
         name: "",
@@ -16,6 +17,14 @@ function NewRecipeForm(){
     const [formData, setFormData] = useState(initialState);
 
     const {name, description, ingredients, instructions, cuisine, image, vegan, vegetarian} = formData;
+
+    const{id} = useParams();
+
+    useEffect(()=> {
+    fetch(`http://localhost:3001/recipes/${id}`)
+    .then((r)=> r.json())
+    .then((recipe) => setFormData(recipe))
+    }, [id]);
 
     function handleVeganCheckbox(){
         setFormData(() => ({ ...formData, "vegan": !vegan }));
@@ -40,17 +49,17 @@ function NewRecipeForm(){
     function handleSubmit(e){
         e.preventDefault();
         const configObj = {
-          method: "POST",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(formData),
         };
     
-        fetch("http://localhost:3001/recipes", configObj)
+        fetch(`http://localhost:3001/recipes/${id}`, configObj)
           .then((resp) => resp.json())
-          .then((data) => {
-            console.log(data);
+          .then((updatedRecipe) => {
+            onUpdatedRecipe(updatedRecipe);
             // onAddRecipe(data);
             // history.push("/recipes")
           });
@@ -96,4 +105,4 @@ function NewRecipeForm(){
     )
 }
 
-export default NewRecipeForm
+export default RecipeEdit

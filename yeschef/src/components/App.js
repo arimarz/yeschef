@@ -6,6 +6,7 @@ import NewRecipeForm from "./NewRecipeForm";
 import NavBar from "./NavBar";
 import Home from "./Home"
 import SingleRecipe from "./SingleRecipe"
+import RecipeEdit from "./RecipeEdit"
 
 function App(){
     const [recipes, setRecipes] = useState([])
@@ -17,10 +18,24 @@ function App(){
         });
     }, []);
 
+
+    function onUpdatedRecipe(updatedRecipe) {
+        const updatedRecipes = recipes.map((ogRecipe) => {
+            if (ogRecipe.id === updatedRecipe.id) {
+              return updatedRecipe;
+            } else {
+              return ogRecipe;
+            }
+          });
+          setRecipes(updatedRecipes);
+        };
+    
+
     const [searchText, setSearchText] = useState("")
 
     const recipesToDisplay = recipes.filter((recipe) => recipe.name.toLowerCase().includes(searchText.toLowerCase()))
     console.log(recipesToDisplay);
+
 
     return (
         <div>
@@ -31,16 +46,16 @@ function App(){
                     <Home />
                 </Route>
 
-                {/* <Route path="/recipes/:id/edit">
-                    <RecipeEdit />
-                </Route> */}
+                <Route path="/recipes/:id/edit">
+                    <RecipeEdit onUpdatedRecipe = {onUpdatedRecipe}/>
+                </Route>
 
                 <Route path="/recipes/new">
                     <NewRecipeForm />
                 </Route>
 
                 <Route path="/recipes/:id">
-                    <SingleRecipe recipes={recipes}/>
+                    <SingleRecipe/>
                 </Route>
 
                 <Route path="/recipes">
