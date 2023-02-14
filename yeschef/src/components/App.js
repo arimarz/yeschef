@@ -29,6 +29,10 @@ function App(){
           });
           setRecipes(updatedRecipes);
         };
+
+    function onAddRecipe(newRecipe) {
+        setRecipes((recipes)=> [...recipes, newRecipe])
+    }
     
 
     const [searchText, setSearchText] = useState("")
@@ -51,7 +55,7 @@ function App(){
                 </Route>
 
                 <Route path="/recipes/new">
-                    <NewRecipeForm />
+                    <NewRecipeForm onAddRecipe={onAddRecipe}/>
                 </Route>
 
                 <Route path="/recipes/:id">
