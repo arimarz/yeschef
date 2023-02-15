@@ -1,3 +1,4 @@
+import {useState} from "react"
 import RecipeCard from "./RecipeCard"
 import {useHistory} from "react-router-dom"
 
@@ -7,17 +8,21 @@ const history = useHistory()
     function handleClick(id) {
         history.push(`/recipes/${id}`);
       }
+    
 
     const recipeCard = recipes.map((recipe)=> {
         return <RecipeCard 
         key = {recipe.id} 
+        id= {recipe.id}
         name = {recipe.name} 
         image = {recipe.image}
         ingredients = {recipe.ingredients}
         instructions = {recipe.instructions}
         cuisine = {recipe.cuisine}
-        onClick = {() => handleClick(recipe.id)} />
+        favorited = {recipe.favorited}
+        onSwitch = {() => handleClick(recipe.id)} />
     })
+
     return(
         <div className="recipe-list">
         {recipeCard}

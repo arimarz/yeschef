@@ -15,7 +15,7 @@ function NavBar({setSearchText, searchText}){
                 <div className="navigation">
                     <NavLink className="button" exact to="/recipes">All Recipes</NavLink>
                     <NavLink className="button" exact to="/recipes/new">Add A New Recipe</NavLink>
-                    <NavLink className="button" exact to='/recipes/favorites'>Favorites</NavLink>
+                    <NavLink className="button"  exact to="/recipes/favorites">Favorites</NavLink>
                 </div>
             </nav>
         </header>
