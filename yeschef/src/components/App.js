@@ -45,6 +45,7 @@ function App(){
         <div>
             <NavBar setSearchText={setSearchText} 
             searchText={searchText} />
+            <div className="main-body">
             <Switch>
                 
                 <Route exact path="/">
@@ -72,6 +73,7 @@ function App(){
                 </Route>
 
             </Switch>
+            </div>
         </div>
     )
 }

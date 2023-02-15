@@ -24,7 +24,7 @@
       "cuisine": "American",
       "vegetarian": true,
       "vegan": false,
-      "favorited": false
+      "favorited": true
     },
     {
       "id": 2,

@@ -11,7 +11,7 @@ function NavBar({setSearchText, searchText}){
             <nav>
                 {notRenderSmallLogo ? null : <Link to="/"><h1 className="title">yes, chef.</h1></Link>}
                 {shouldRenderSearch && (
-                <Search setSearchText={setSearchText} searchText={searchText} />
+                    <Search setSearchText={setSearchText} searchText={searchText} />
                 )}
                 <div className="navigation">
                     <NavLink className="button" exact to="/recipes">All Recipes</NavLink>

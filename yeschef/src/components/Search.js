@@ -6,8 +6,8 @@ function Search({setSearchText, searchText}){
 
     return(
         <div className="search">
-            <form className="searchbar">
-                <input type="text" placeholder="Search Recipes" onChange={handleChange} value={searchText} />
+            <form>
+                <input type="text" className="searchbar" placeholder="Search Recipes" onChange={handleChange} value={searchText} />
             </form>
         </div>
     )
