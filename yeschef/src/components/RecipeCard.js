@@ -22,17 +22,17 @@ function RecipeCard({ name, image, cuisine, onSwitch, favorited, id}) {
 
 
   return (
-      <div>
+    <div>
       <div className="recipe-card-content" onClick={onSwitch}>
         <h2>{name}</h2>
         <img className="image" src={image} alt={name} />
         <p>
           <strong>Cuisine:</strong> {cuisine}
         </p>
-      </div>
         <button onClick={handleFavorite}>
           {isFavorite ? "UNFAVORITE" : "FAVORITE"}</button>
-          </div>
+      </div>
+    </div>
   );
 }
 
