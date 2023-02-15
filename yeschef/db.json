@@ -23,8 +23,7 @@
       ],
       "cuisine": "American",
       "vegetarian": true,
-      "vegan": false, 
-      "favorited": false
+      "vegan": false
     },
     {
       "id": 2,
@@ -48,8 +47,7 @@
       ],
       "cuisine": "Italian",
       "vegetarian": true,
-      "vegan": false, 
-      "favorited": false
+      "vegan": false
     },
     {
       "id": 3,
@@ -77,8 +75,7 @@
       ],
       "cuisine": "Italian",
       "vegetarian": false,
-      "vegan": false, 
-      "favorited": false
+      "vegan": false
     },
     {
       "id": 4,
@@ -113,8 +110,7 @@
       ],
       "cuisine": "Indian",
       "vegetarian": false,
-      "vegan": false, 
-      "favorited": false
+      "vegan": false
     },
     {
       "id": 5,
@@ -146,8 +142,7 @@
       ],
       "cuisine": "Asian",
       "vegetarian": false,
-      "vegan": false, 
-      "favorited": false
+      "vegan": false
     },
     {
       "id": 6,
@@ -176,8 +171,7 @@
       ],
       "cuisine": "Asian",
       "vegetarian": true,
-      "vegan": true, 
-      "favorited": false
+      "vegan": true
     },
     {
       "id": 7,
@@ -211,8 +205,7 @@
       ],
       "cuisine": "Mexican",
       "vegetarian": true,
-      "vegan": true, 
-      "favorited": false
+      "vegan": true
     }
   ]
 }

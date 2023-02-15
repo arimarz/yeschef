@@ -7,14 +7,12 @@ function NewRecipeForm ({onAddRecipe}){
 
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [ingredients, setIngredients] = useState([]);
-    const [instructions, setInstructions] = useState([]);
+    const [ingredients, setIngredients] = useState([""]);
+    const [instructions, setInstructions] = useState([""]);
     const [cuisine, setCuisine] = useState('');
     const [image, setImage] = useState('');
     const [vegan, setVegan] = useState(false);
     const [vegetarian, setVegetarian] = useState(false);
-
-    const [ingredientCount, setIngredientCount] = useState(1);
 
     function handleName(e){
         setName(e.target.value)
@@ -24,32 +22,25 @@ function NewRecipeForm ({onAddRecipe}){
         setDescription(e.target.value)
     }
 
-    function ingredientCounter(){
-        setIngredientCount(ingredientCount + 1)
+    function handleAddIngredient(){
+        setIngredients([...ingredients, ""])
     }
 
     function handleIngredients(e){
-        const ingKey = e.target.name;
-        const ingValue = e.target.value;
-        console.log(ingKey);
-        console.log(ingValue);
-
-        ingredients[ingKey] = ingValue
-
-        // const newArray = ingredients.map((item)=>{
-        //     if (item.id === ingKey) {
-        //         return [...item, ingValue]
-        //     } else {return item}
-        // })
-        // setIngredients(newArray);
-
-        // const newIngredient = e.target.value
-        // setIngredients((previousIngredients)=>[...previousIngredients, ingKey: ingValue])
-        console.log(ingredients);
+        // ingredients[e.target.name] = e.target.value
+        const newIngs = ingredients.slice()
+        newIngs[e.target.name] = e.target.value
+        setIngredients(newIngs)
     }
 
-    function handleInstructions(){
-        setInstructions("test")
+    function handleAddInstruction(){
+        setInstructions([...instructions, ""])
+    }
+
+    function handleInstructions(e){
+        const newInst = instructions.slice()
+        newInst[e.target.name] = e.target.value
+        setInstructions(newInst)
     }
 
     function handleCuisine(e){
@@ -66,7 +57,10 @@ function NewRecipeForm ({onAddRecipe}){
     }
 
     function handleVegetarian(){
-        setVegetarian(!vegetarian)
+        if(vegan){
+            setVegetarian(true)
+        }else{
+            setVegetarian(!vegetarian)}
     }
 
     const newRecipe = {
@@ -80,24 +74,21 @@ function NewRecipeForm ({onAddRecipe}){
         vegetarian: vegetarian,
     }
 
-    // console.log(newRecipe);
+    const configObj = {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newRecipe),
+    };
 
     function handleSubmit(e){
         e.preventDefault();
-        const configObj = {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newRecipe),
-        };
-    
         fetch("http://localhost:3001/recipes", configObj)
             .then((resp) => resp.json())
             .then((data) => {
             onAddRecipe(data);
-            // setFormData({initialState});
-            history.push("/recipes")
+            history.push(`/recipes/${data.id}`)
         });
     };
 
@@ -113,24 +104,34 @@ function NewRecipeForm ({onAddRecipe}){
                     <input type="text" id="description" name="description" onChange={handleDescription} value={description}/>
                 </li>
 
-
-
                 <li>
                     <label htmlFor="ingredients">Ingredients: </label>
-                    {/* <input type="textbox" id="ingredients" name="ingredients" onChange={handleIngredients} value={ingredients} /> */}
-                
-                    {Array.from(Array(ingredientCount)).map((c, index) => {
-                    return <input key={index} type="textbox" id={`ingredients[${index}]`} name={`${index}`} onChange={handleIngredients}></input>;
-                })}
-                <button type='button' onClick={ingredientCounter} >Add Additional Ingredient</button>
+                    {ingredients.map((ing, index) => {
+                        return <input 
+                            key={index} 
+                            type="text" 
+                            name={`${index}`} 
+                            value={ing} 
+                            onChange={handleIngredients}   
+                        />;
+                    })}
+                    <button type='button' onClick={handleAddIngredient} >Add Additional Ingredient</button>
                 </li>
-
-
 
                 <li>
                     <label htmlFor="instructions">Instructions: </label>
-                    <input type="textbox" id="instructions" name="instructions" onChange={handleInstructions} value={instructions}/>
+                    {instructions.map((ins, index) => {
+                        return <input 
+                            key={index} 
+                            type="text" 
+                            name={`${index}`} 
+                            value={ins} 
+                            onChange={handleInstructions}   
+                        />;
+                    })}
+                    <button type='button' onClick={handleAddInstruction} >Add Additional Step</button>
                 </li>
+
                 <li>
                     <label htmlFor="cuisine">Type of Cuisine: </label>
                     <input type="text" id="cuisine" name="cuisine" onChange={handleCuisine} value={cuisine}/>
