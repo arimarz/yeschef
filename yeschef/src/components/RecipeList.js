@@ -24,7 +24,7 @@ const history = useHistory()
     })
 
     return(
-        <div className= 'recipe-list'>
+        <div className="recipe-list">
         {recipeCard}
         </div>
 )};
