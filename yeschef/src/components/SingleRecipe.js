@@ -26,6 +26,9 @@ function SingleRecipe(){
         <h2>{name}</h2>
         <img className="image" src={image} alt={name} />
         <Link to={`/recipes/${id}/edit`}><p className="linkToEdit">Edit This Recipe</p></Link>
+        <p>
+          <strong>Cuisine:</strong> {cuisine}
+        </p>
         <div className="ingredients">
           <h3>Ingredients:</h3>
           <ul>
@@ -46,9 +49,6 @@ function SingleRecipe(){
       </span>
       <span>{vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg"/> : null }
       </span>
-      <p>
-        <strong>Cuisine:</strong> {cuisine}
-      </p>
     </div>
   )
 }

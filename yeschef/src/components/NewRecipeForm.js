@@ -93,63 +93,67 @@ function NewRecipeForm ({onAddRecipe}){
     };
 
     return(
-        <form onSubmit={handleSubmit}>
-            <ul>
-                <li>
-                    <label htmlFor="name">Recipe Name: </label>
-                    <input type="text" id="name" name="name" onChange={handleName} value={name}/>
-                </li>
-                <li>
-                    <label htmlFor="description">Description: </label>
-                    <input type="text" id="description" name="description" onChange={handleDescription} value={description}/>
-                </li>
+        <div className="recipeForm">
+            <form onSubmit={handleSubmit}>
+                <ul>
+                    <li>
+                        <label htmlFor="name">Recipe Name: </label>
+                        <input type="text" className="form-text-input" id="name" name="name" onChange={handleName} value={name}/>
+                    </li>
+                    <li>
+                        <label htmlFor="description">Description: </label>
+                        <input type="text" className="form-text-input" id="description" name="description" onChange={handleDescription} value={description}/>
+                    </li>
 
-                <li>
-                    <label htmlFor="ingredients">Ingredients: </label>
-                    {ingredients.map((ing, index) => {
-                        return <input 
-                            key={index} 
-                            type="text" 
-                            name={`${index}`} 
-                            value={ing} 
-                            onChange={handleIngredients}   
-                        />;
-                    })}
-                    <button type='button' onClick={handleAddIngredient} >Add Additional Ingredient</button>
-                </li>
+                    <li>
+                        <label htmlFor="ingredients">Ingredients: </label>
+                        {ingredients.map((ing, index) => {
+                            return <input 
+                                className="form-text-input"
+                                key={index} 
+                                type="text" 
+                                name={`${index}`} 
+                                value={ing} 
+                                onChange={handleIngredients}   
+                            />;
+                        })}
+                        <button type='button' className="form-button" onClick={handleAddIngredient} >Add Additional Ingredient</button>
+                    </li>
 
-                <li>
-                    <label htmlFor="instructions">Instructions: </label>
-                    {instructions.map((ins, index) => {
-                        return <input 
-                            key={index} 
-                            type="text" 
-                            name={`${index}`} 
-                            value={ins} 
-                            onChange={handleInstructions}   
-                        />;
-                    })}
-                    <button type='button' onClick={handleAddInstruction} >Add Additional Step</button>
-                </li>
+                    <li>
+                        <label htmlFor="instructions">Instructions: </label>
+                        {instructions.map((ins, index) => {
+                            return <input 
+                                className="form-text-input"
+                                key={index} 
+                                type="text" 
+                                name={`${index}`} 
+                                value={ins} 
+                                onChange={handleInstructions}   
+                            />;
+                        })}
+                        <button type='button' className="form-button" onClick={handleAddInstruction} >Add Additional Step</button>
+                    </li>
 
-                <li>
-                    <label htmlFor="cuisine">Type of Cuisine: </label>
-                    <input type="text" id="cuisine" name="cuisine" onChange={handleCuisine} value={cuisine}/>
-                </li>
-                <li>
-                    <label htmlFor="image">Recipe Image Link: </label>
-                    <input type="text" id="image" name="image" onChange={handleImage} value={image}/>
-                </li>
+                    <li>
+                        <label htmlFor="cuisine">Type of Cuisine: </label>
+                        <input type="text" className="form-text-input" id="cuisine" name="cuisine" onChange={handleCuisine} value={cuisine}/>
+                    </li>
+                    <li>
+                        <label htmlFor="image">Recipe Image Link: </label>
+                        <input type="text" className="form-text-input" id="image" name="image" onChange={handleImage} value={image}/>
+                    </li>
 
-                <label htmlFor="vegan">Vegan</label>
-                <input type="checkbox" id="vegan" name="vegan" onChange={handleVegan} checked={vegan}/>
+                    <label htmlFor="vegan">Vegan</label>
+                    <input type="checkbox" className="checkbox" id="vegan" name="vegan" onChange={handleVegan} checked={vegan}/>
 
-                <label htmlFor="vegetarian">Vegetarian</label>
-                <input type="checkbox" id="vegetarian" name="vegetarian" onChange={handleVegetarian} checked={vegetarian}/>
+                    <label htmlFor="vegetarian">Vegetarian</label>
+                    <input type="checkbox" className="checkbox" id="vegetarian" name="vegetarian" onChange={handleVegetarian} checked={vegetarian}/>
 
-                <button type="submit">Submit</button>
-           </ul>
-        </form>
+                    <button className="form-button" type="submit">Submit</button>
+            </ul>
+            </form>
+        </div>
     ) 
 }
 

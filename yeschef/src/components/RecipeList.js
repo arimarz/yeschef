@@ -19,7 +19,7 @@ const history = useHistory()
         onClick = {() => handleClick(recipe.id)} />
     })
     return(
-        <div>
+        <div className="recipe-list">
         {recipeCard}
         </div>
 )};
