@@ -60,11 +60,16 @@ function App(){
 
 
     const favoriteRecipes = recipesToDisplay.filter((recipe) => recipe.favorited);
-
+    const veganRecipes = recipesToDisplay.filter((recipe) => recipe.vegan);
+    const vegetarianRecipes = recipesToDisplay.filter((recipe) => recipe.vegetarian || recipe.vegan);
+    
     return (
         <div>
             <NavBar setSearchText={setSearchText} 
-            searchText={searchText} />
+            searchText={searchText} 
+            veganRecipes= {veganRecipes}
+            vegetarianRecipes ={vegetarianRecipes}
+            />
             <div className="main-body">
             <Switch>
                 
@@ -79,6 +84,14 @@ function App(){
 
                 <Route path="/recipes/new">
                     <NewRecipeForm onAddRecipe={onAddRecipe}/>
+                </Route>
+
+                <Route path="/recipes/vegetarian">
+                    <RecipeList recipes={vegetarianRecipes}/>
+                </Route>
+                
+                <Route path="/recipes/vegan">
+                    <RecipeList recipes={veganRecipes}/>
                 </Route>
 
                 <Route path="/recipes/favorites">

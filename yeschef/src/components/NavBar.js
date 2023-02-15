@@ -13,6 +13,9 @@ function NavBar({setSearchText, searchText}){
                 {shouldRenderSearch && (
                     <Search setSearchText={setSearchText} searchText={searchText} />
                 )}
+
+                <NavLink className="veg-button radio" exact to= "/recipes/vegan">Vegan</NavLink>
+                <NavLink className="veg-button radio" exact to= "/recipes/vegetarian">Vegetarian</NavLink>
                 <div className="navigation">
                     <NavLink className="button" exact to="/recipes">All Recipes</NavLink>
                     <NavLink className="button" exact to="/recipes/new">Add A New Recipe</NavLink>

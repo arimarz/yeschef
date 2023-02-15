@@ -186,6 +186,43 @@ input.checkbox#vegetarian {
   margin-bottom: 20px;
 }
 
+.veg-button {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding-left: 35px;
+  cursor: pointer;
+}
+
+.veg-button.radio:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid #7a0707;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.veg-button.radio:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: orange;
+  display: none;
+}
+
+.veg-button.radio.active:after {
+  display: block;
+=======
 .home {
   position: absolute;
   width: 80%;
@@ -213,4 +250,5 @@ input.checkbox#vegetarian {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: .1rem;
+
 }
