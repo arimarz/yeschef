@@ -9,38 +9,40 @@ function Home({randomRecipes, newRecipes}){
       }
 
     return(
-        <div>
-        <h1 className="title">yes, chef.</h1>
-        <p> <h1>Check Out Our Recipes! </h1>
-        {randomRecipes.map((recipe) => (
-          <RecipeCard key = {recipe.id} 
-          id= {recipe.id}
-          name = {recipe.name} 
-          image = {recipe.image}
-          description = {recipe.description}
-          cuisine = {recipe.cuisine}
-          favorited = {recipe.favorited}
-          onSwitch = {() => handleClick(recipe.id)} />
-        ))}       
-        </p>
-        <p><h1>Just Added!</h1>
-        {newRecipes.map((recipe) => (
-        <RecipeCard key = {recipe.id} 
-          id= {recipe.id}
-          name = {recipe.name} 
-          image = {recipe.image}
-          description = {recipe.description}
-          cuisine = {recipe.cuisine}
-          favorited = {recipe.favorited}
-          onSwitch = {() => handleClick(recipe.id)}/> 
-        ))}
-        </p>
+        <div className="home">
+            <h1 className="title">yes, chef.<p>The recipe book for kitchen commanders</p></h1>
+            <h2 className="home-heading">Need some inspiration? Try one of these!</h2>
+            <div className="random-recipes">
+                {randomRecipes.map((recipe) => (
+                    <RecipeCard 
+                        key = {recipe.id} 
+                        id= {recipe.id}
+                        name = {recipe.name} 
+                        image = {recipe.image}
+                        description = {recipe.description}
+                        cuisine = {recipe.cuisine}
+                        favorited = {recipe.favorited}
+                        onSwitch = {() => handleClick(recipe.id)}
+                    />
+                ))}       
+            </div>
+            <h2 className="home-heading">Or try out one of your newest recipes!</h2>
+            <div className="new-recipes">
+                {newRecipes.map((recipe) => (
+                    <RecipeCard 
+                        key = {recipe.id} 
+                        id= {recipe.id}
+                        name = {recipe.name} 
+                        image = {recipe.image}
+                        description = {recipe.description}
+                        cuisine = {recipe.cuisine}
+                        favorited = {recipe.favorited}
+                        onSwitch = {() => handleClick(recipe.id)}
+                    /> 
+                ))}
+            </div>
         </div>
     )
 }
-
-
-// const getRandomPlaneteer = () => 
-//   arrayOfPlaneteers[Math.floor(Math.random() * arrayOfPlaneteers.length)]
 
 export default Home
