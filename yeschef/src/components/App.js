@@ -33,17 +33,20 @@ function App(){
     function onAddRecipe(newRecipe) {
         setRecipes((recipes)=> [...recipes, newRecipe])
     }
-    
 
     const [searchText, setSearchText] = useState("")
 
     const recipesToDisplay = recipes.filter((recipe) => (recipe.name.toLowerCase().includes(searchText.toLowerCase())) || (recipe.cuisine.toLowerCase().includes(searchText.toLowerCase())))
     console.log(recipesToDisplay);
 
+    const favoriteRecipes = recipesToDisplay.filter((recipe) => recipe.favorited);
+
+    console.log(favoriteRecipes)
 
     return (
         <div>
-            <NavBar setSearchText={setSearchText} searchText={searchText} />
+            <NavBar setSearchText={setSearchText} 
+            searchText={searchText} />
             <Switch>
                 
                 <Route exact path="/">
@@ -56,6 +59,10 @@ function App(){
 
                 <Route path="/recipes/new">
                     <NewRecipeForm onAddRecipe={onAddRecipe}/>
+                </Route>
+
+                <Route path="/recipes/favorites">
+                    <RecipeList recipes={favoriteRecipes} />
                 </Route>
 
                 <Route path="/recipes/:id">
