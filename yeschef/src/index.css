@@ -222,7 +222,8 @@ input.checkbox#vegetarian {
 
 .veg-button.radio.active:after {
   display: block;
-=======
+}
+
 .home {
   position: absolute;
   width: 80%;
