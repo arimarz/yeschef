@@ -22,13 +22,15 @@ function SingleRecipe(){
   const {name, image, ingredients, instructions, cuisine, vegan, vegetarian} = recipe
 
   return(
-      <div>
-        <h2>{name}</h2>
-        <img className="image" src={image} alt={name} />
-        <Link to={`/recipes/${id}/edit`}><p className="linkToEdit">Edit This Recipe</p></Link>
-        <p>
-          <strong>Cuisine:</strong> {cuisine}
-        </p>
+      <div className="single-recipe">
+        <div className="single-nontext">
+          <h2>{name}</h2>
+          <img className="image" src={image} alt={name} />
+          <Link to={`/recipes/${id}/edit`}><p className="linkToEdit">Edit This Recipe</p></Link>
+          <p>
+            <strong>Cuisine:</strong> {cuisine}
+          </p>
+        </div>
         <div className="ingredients">
           <h3>Ingredients:</h3>
           <ul>
@@ -45,10 +47,12 @@ function SingleRecipe(){
             ))}
           </ul>
         </div>
-      <span>{vegetarian ? <img className= "veg-image" src= "https://img.myloview.com/posters/vegetarian-food-diet-icon-organic-bio-eco-symbol-no-meat-vegetarian-healthy-and-nonviolent-food-round-green-vector-illustration-with-ribbon-and-leaves-for-stickers-labels-and-logos-700-179938004.jpg"/> : null}
-      </span>
-      <span>{vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg"/> : null }
-      </span>
+        <div className="single-nontext">
+          <span>{vegetarian ? <img className= "veg-image" src= "https://img.myloview.com/posters/vegetarian-food-diet-icon-organic-bio-eco-symbol-no-meat-vegetarian-healthy-and-nonviolent-food-round-green-vector-illustration-with-ribbon-and-leaves-for-stickers-labels-and-logos-700-179938004.jpg"/> : null}
+          </span>
+          <span>{vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg"/> : null }
+          </span>
+        </div>
     </div>
   )
 }
