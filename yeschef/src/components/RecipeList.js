@@ -4,10 +4,6 @@ import {useHistory} from "react-router-dom"
 
 function RecipeList({recipes}){
 const history = useHistory()
-// const [favoriteRecipes, setFavoriteRecipes] = useState(
-//     recipes.filter((recipe) => recipe.favorited)
-//   );
-
 
     function handleClick(id) {
         history.push(`/recipes/${id}`);

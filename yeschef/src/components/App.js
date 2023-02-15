@@ -37,11 +37,9 @@ function App(){
     const [searchText, setSearchText] = useState("")
 
     const recipesToDisplay = recipes.filter((recipe) => (recipe.name.toLowerCase().includes(searchText.toLowerCase())) || (recipe.cuisine.toLowerCase().includes(searchText.toLowerCase())))
-    console.log(recipesToDisplay);
+
 
     const favoriteRecipes = recipesToDisplay.filter((recipe) => recipe.favorited);
-
-    console.log(favoriteRecipes)
 
     return (
         <div>
