@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function RecipeCard({ name, image, cuisine, onSwitch, favorited, id}) {
+function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description}) {
   const [isFavorite, setFavorite] = useState(favorited)
 
     function handleFavorite() {
@@ -26,6 +26,8 @@ function RecipeCard({ name, image, cuisine, onSwitch, favorited, id}) {
       <div className="recipe-card-content" onClick={onSwitch}>
         <h2>{name}</h2>
         <img className="image" src={image} alt={name} />
+        <p><strong>{description}</strong> 
+        </p>
         <p>
           <strong>Cuisine:</strong> {cuisine}
         </p>
