@@ -10,14 +10,34 @@ import RecipeEdit from "./RecipeEdit"
 
 function App(){
     const [recipes, setRecipes] = useState([])
+    const [randomRecipes, setRandomRecipes] = useState([])
+    
     useEffect(() => {
         fetch("http://localhost:3001/recipes")
           .then((resp) => resp.json())
           .then((data) => {
-            setRecipes(data)
+            setRecipes(data);
+            const randomIndices = getRandomIndices(data.length, 4);
+            const randomRecipeList = randomIndices.map((index) => data[index]);
+            setRandomRecipes(randomRecipeList);
         });
-    }, []);
+    }, [])
 
+    console.log(recipes)
+
+    const newRecipes = recipes.slice(-4)
+    console.log(newRecipes)
+
+    function getRandomIndices(maxIndex, count) {
+        const indices = [];
+        while (indices.length < count) {
+          const index = Math.floor(Math.random() * maxIndex);
+          if (!indices.includes(index)) {
+            indices.push(index);
+          }
+        }
+        return indices;
+      }
 
     function onUpdatedRecipe(updatedRecipe) {
         const updatedRecipes = recipes.map((ogRecipe) => {
@@ -49,7 +69,8 @@ function App(){
             <Switch>
                 
                 <Route exact path="/">
-                    <Home />
+                    <Home randomRecipes={randomRecipes}
+                    newRecipes= {newRecipes}/>
                 </Route>
 
                 <Route path="/recipes/:id/edit">
