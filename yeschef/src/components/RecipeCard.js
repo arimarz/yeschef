@@ -34,7 +34,7 @@ function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description
           </p>
         </div>
         <button onClick={handleFavorite}>
-          {isFavorite ? "UNFAVORITE" : "FAVORITE"}</button>
+          {isFavorite ? "Remove from Favorites" : "Add to Favotires"}</button>
       </div>
     </div>
   );
