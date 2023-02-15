@@ -1,8 +1,8 @@
 // import { Card } from "semantic-ui-react";
 
-function RecipeCard({ name, image, ingredients, instructions, cuisine }) {
+function RecipeCard({ name, image, cuisine, onClick}) {
   return (
-      <div className="recipe-card-content">
+      <div className="recipe-card-content" onClick={onClick}>
         <h2>{name}</h2>
         <img className="image" src={image} alt={name} />
         <p>

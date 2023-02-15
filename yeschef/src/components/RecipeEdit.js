@@ -28,9 +28,13 @@ function RecipeEdit({onUpdatedRecipe}){
     .then((recipe) => setFormData(recipe))
     }, [id]);
 
-    function handleVeganCheckbox(){
-        setFormData(() => ({ ...formData, "vegan": !vegan }));
-    }
+    function handleVeganCheckbox() {
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          vegan: !prevFormData.vegan,
+          vegetarian: true
+        }));
+      }
 
     function handleVegetarianCheckbox(){
         setFormData(() => ({ ...formData, "vegetarian": !vegetarian }));

@@ -18,9 +18,13 @@ function NewRecipeForm({onAddRecipe}){
 
     const {name, description, ingredients, instructions, cuisine, image, vegan, vegetarian} = formData;
 
-    function handleVeganCheckbox(){
-        setFormData(() => ({ ...formData, "vegan": !vegan }));
-    }
+    function handleVeganCheckbox() {
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          vegan: !prevFormData.vegan,
+          vegetarian: true
+        }));
+      }
 
     function handleVegetarianCheckbox(){
         setFormData(() => ({ ...formData, "vegetarian": !vegetarian }));
