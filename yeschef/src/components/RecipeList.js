@@ -16,8 +16,7 @@ const history = useHistory()
         id= {recipe.id}
         name = {recipe.name} 
         image = {recipe.image}
-        ingredients = {recipe.ingredients}
-        instructions = {recipe.instructions}
+        description = {recipe.description}
         cuisine = {recipe.cuisine}
         favorited = {recipe.favorited}
         onSwitch = {() => handleClick(recipe.id)} />

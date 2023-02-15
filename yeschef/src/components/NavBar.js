@@ -4,11 +4,12 @@ import Search from './Search';
 function NavBar({setSearchText, searchText}){
     const location = useLocation();
     const shouldRenderSearch = location.pathname === '/recipes';
+    const notRenderSmallLogo = location.pathname === '/';
 
     return(
         <header>
             <nav>
-                <Link to="/"><h1 className="title">yes, chef.</h1></Link>
+                {notRenderSmallLogo ? null : <Link to="/"><h1 className="title">yes, chef.</h1></Link>}
                 {shouldRenderSearch && (
                 <Search setSearchText={setSearchText} searchText={searchText} />
                 )}
