@@ -29,7 +29,7 @@ Lastly, run:
 ```
 $ npm run server
 ```
-This will initialize the JSON server.
+This will initialize the JSON server. Open [http://localhost:3001/recipes](http://localhost:3001/recipes) to view it in your browser.
 
 ## Roadmap
 Future additions include:
