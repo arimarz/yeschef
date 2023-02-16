@@ -27,9 +27,10 @@ function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description
           <p>
             <strong>Cuisine:</strong> {cuisine}
           </p>
+          <p>{isFavorite? "One of your favorites!" : null}</p>
         </div>
-        <button onClick={handleFavorite}>
-          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}</button>
+        <button className="fav-button" onClick={handleFavorite}>
+          {isFavorite ? "💔 Remove from Favorites 💔" : "❤️ Add to Favorites ❤️"}</button>
       </div>
     </div>
   );

@@ -23,10 +23,7 @@ function App(){
         });
     }, [])
 
-    console.log(recipes)
-
     const newRecipes = recipes.slice(-4)
-    console.log(newRecipes)
 
     function getRandomIndices(maxIndex, count) {
         const indices = [];
