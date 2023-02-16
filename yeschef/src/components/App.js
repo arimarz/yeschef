@@ -55,7 +55,6 @@ function App(){
 
     const recipesToDisplay = recipes.filter((recipe) => (recipe.name.toLowerCase().includes(searchText.toLowerCase())) || (recipe.cuisine.toLowerCase().includes(searchText.toLowerCase())))
 
-
     const favoriteRecipes = recipesToDisplay.filter((recipe) => recipe.favorited);
     const veganRecipes = recipesToDisplay.filter((recipe) => recipe.vegan);
     const vegetarianRecipes = recipesToDisplay.filter((recipe) => recipe.vegetarian || recipe.vegan);
