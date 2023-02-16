@@ -1,24 +1,19 @@
 import {useState} from 'react'
 
 function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description}) {
+  
   const [isFavorite, setFavorite] = useState(favorited)
 
     function handleFavorite() {
-    setFavorite((isFavorite)=> !isFavorite)
-
-    fetch(`http://localhost:3001/recipes/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        favorited: isFavorite
+      fetch(`http://localhost:3001/recipes/${id}`, {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({favorited: !isFavorite})
       })
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error))
-  }
+        .then(response => response.json())
+        .then(data => setFavorite(data.favorited))
+        .catch(error => console.error(error))
+    }
 
 
   return (
