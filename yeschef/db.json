@@ -49,7 +49,7 @@
       "cuisine": "Italian",
       "vegetarian": true,
       "vegan": false,
-      "favorited": true
+      "favorited": false
     },
     {
       "id": 3,
@@ -78,7 +78,7 @@
       "cuisine": "Italian",
       "vegetarian": false,
       "vegan": false,
-      "favorited": true
+      "favorited": false
     },
     {
       "id": 4,
@@ -114,7 +114,7 @@
       "cuisine": "Indian",
       "vegetarian": false,
       "vegan": false,
-      "favorited": true
+      "favorited": false
     },
     {
       "id": 5,
