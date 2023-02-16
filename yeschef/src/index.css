@@ -240,7 +240,7 @@ input.checkbox#vegetarian {
   position: absolute;
   width: 80%;
   top: 0px;
-  padding-top: 80px;
+  padding-top: 100px;
   padding-right: 10%;
   padding-left: 10%;
   text-align: center;
@@ -248,20 +248,25 @@ input.checkbox#vegetarian {
 }
 
 .random-recipes {
-  align-self: center;
-  /* margin: 20px; */
-  list-style: none;
+  width: 80%;
+  padding-right: 10%;
+  padding-left: 10%;
+  /* align-self: center; */
+  margin: 20px;
+  /* list-style: none; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: .1rem;
 }
 
 .new-recipes {
-  align-self: center;
+  width: 80%;
+  padding-right: 10%;
+  padding-left: 10%;
+  /* align-self: center; */
   margin: 20px;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: .1rem;
-
 }
