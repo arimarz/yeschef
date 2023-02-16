@@ -3,7 +3,6 @@ import Search from './Search';
 
 function NavBar({setSearchText, searchText}) {
   const location = useLocation();
-  const shouldRenderSearch = location.pathname === '/recipes';
   const notRenderSmallLogo = location.pathname === '/';
   
 
@@ -15,15 +14,11 @@ function NavBar({setSearchText, searchText}) {
             <Search setSearchText={setSearchText} searchText={searchText}/>
           </div>
         <div className="navigation">
-         {shouldRenderSearch && (
-            <>
-              <NavLink className="button" exact to="/recipes/vegan">Vegan</NavLink>
-              <NavLink className="button" exact to="/recipes/vegetarian">Vegetarian</NavLink>
-            </>
-          )}
           <NavLink className="button" exact to="/recipes">All Recipes</NavLink>
           <NavLink className="button" exact to="/recipes/new">Add A New Recipe</NavLink>
           <NavLink className="button" exact to="/recipes/favorites">Favorites</NavLink>
+          <NavLink className="button" exact to="/recipes/vegan">Vegan</NavLink>
+          <NavLink className="button" exact to="/recipes/vegetarian">Vegetarian</NavLink>
         </div>
       </nav>
     </header>
