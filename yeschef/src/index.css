@@ -187,11 +187,22 @@ input.checkbox#vegetarian {
 }
 
 .veg-button {
+  color: black;
   position: relative;
+  text-align: center;
   display: inline-block;
+  font-weight: 750;
   margin: 10px;
-  padding-left: 35px;
+  padding-left: 40px;
   cursor: pointer;
+  background-color: rgba(255, 166, 0, 0.616);
+  border: 2px dotted orange;
+  transition: background-color 0.5s;;
+}
+
+.veg-text{
+  position: center;
+  text-align: center;
 }
 
 .veg-button.radio:before {
@@ -202,22 +213,23 @@ input.checkbox#vegetarian {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  border: 1px solid #7a0707;
+  border: 1px solid orange;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: orange;
 }
 
 .veg-button.radio:after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 55%;
+  left: 0;
+  top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid orange;
   border-radius: 50%;
-  background-color: orange;
-  display: none;
+  background-color: rgba(30,144,255,.8);
+  border-radius: 50%;
 }
 
 .veg-button.radio.active:after {
