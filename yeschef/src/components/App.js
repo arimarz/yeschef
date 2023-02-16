@@ -55,7 +55,7 @@ function App(){
     const [searchText, setSearchText] = useState("")
 
     const recipesToDisplay = recipes.filter((recipe) => (recipe.name.toLowerCase().includes(searchText.toLowerCase())) || (recipe.cuisine.toLowerCase().includes(searchText.toLowerCase())))
-
+    
     const [favoriteRecipes, setFavoriteRecipes] = useState([]);
     function handleFavoriteToggle (recipe, favorited) {
         if (favorited) {

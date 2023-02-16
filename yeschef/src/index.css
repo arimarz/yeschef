@@ -18,10 +18,6 @@ p {
   margin: 8px 0px;
 }
 
-input.searchbar {
-  font-size: 24px;
-}
-
 .recipe-list {
   align-self: center;
   margin: 20px;
@@ -120,13 +116,68 @@ nav {
 }
 
 .title {
-  margin: 0 0.8rem;
+  margin: 0 1rem 0 0.8rem;
   padding: 0.5rem 1rem;
   font-weight: 100;
   cursor: pointer;
   color: black;
   background-color: white;
   border: 5px dotted orange;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left:auto;
+  margin-right: 280px 
+}
+
+.search-bar {
+  --size: 25px;
+  background-color: transparent;
+  border: 5px solid transparent;
+  font-weight: 1000;
+  height: var(--size);
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  margin-right: 10px;
+}
+
+.search-bar__input {
+  flex-grow: 1;
+  font-size: 1.5rem;
+  border: 0;
+  background-color: rgba(30,144,255,.8);
+  padding:0 0.5em;
+  background: rgba(30,144,255,.8);
+  opacity: .75;
+  position: absolute;
+  line-height: cal(var(--size) - 3 px);
+  visibility: hidden;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  left: 20px;
+
+}
+
+.search-bar--open .search-bar__input {
+  visibility: visible;
+  transition: visibility 0s linear 0s;
+  z-index: 1;
+}
+
+.search-bar__submit {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: orange;
+  opacity: .75;
+  border: 0;
+  border-radius: 50%;
+  width: cal(var(--size) - 3 px);
+  height: cal(var(--size) - 3 px);
+  margin-left:-20px
 }
 
 a {
@@ -190,56 +241,6 @@ input.checkbox#vegetarian {
   margin-bottom: 20px;
 }
 
-.veg-button {
-  color: black;
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  font-weight: 750;
-  margin: 10px;
-  padding-left: 40px;
-  cursor: pointer;
-  background-color: rgba(255, 166, 0, 0.616);
-  border: 2px dotted orange;
-  transition: background-color 0.5s;;
-}
-
-.veg-text{
-  position: center;
-  text-align: center;
-}
-
-.veg-button.radio:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 1px solid orange;
-  border-radius: 50%;
-  background-color: orange;
-}
-
-.veg-button.radio:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 1px solid orange;
-  border-radius: 50%;
-  background-color: rgba(30,144,255,.8);
-  border-radius: 50%;
-}
-
-.veg-button.radio.active:after {
-  display: block;
-}
-
 .home {
   position: absolute;
   width: 80%;
@@ -287,3 +288,4 @@ input.checkbox#vegetarian {
 .fav-button:active {
   background-color: rgba(255, 165, 0, .75);
 }
+
