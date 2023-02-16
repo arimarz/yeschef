@@ -1,7 +1,7 @@
 import RecipeCard from "./RecipeCard"
 import {useHistory} from "react-router-dom"
 
-function RecipeList({recipes}){
+function RecipeList({recipes, handleFavoriteToggle}){
     const history = useHistory()
 
     function handleClick(id) {
@@ -18,6 +18,7 @@ function RecipeList({recipes}){
             cuisine = {recipe.cuisine}
             favorited = {recipe.favorited}
             onSwitch = {() => handleClick(recipe.id)} 
+            handleFavoriteToggle = {handleFavoriteToggle}
         />
     })
   

@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description}) {
+function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description, handleFavoriteToggle}) {
   
   const [isFavorite, setFavorite] = useState(favorited)
 
@@ -11,7 +11,10 @@ function RecipeCard({ name, image, cuisine, onSwitch, favorited, id, description
         body: JSON.stringify({favorited: !isFavorite})
       })
         .then(response => response.json())
-        .then(data => setFavorite(data.favorited))
+        .then(data => {
+          setFavorite(data.favorited);
+          handleFavoriteToggle(data, data.favorited)
+        })
         .catch(error => console.error(error))
     }
 
