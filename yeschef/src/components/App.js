@@ -17,16 +17,14 @@ function App(){
           .then((resp) => resp.json())
           .then((data) => {
             setRecipes(data);
+            setFavoriteRecipes(data.filter((recipe) => recipe.favorited));
             const randomIndices = getRandomIndices(data.length, 4);
             const randomRecipeList = randomIndices.map((index) => data[index]);
             setRandomRecipes(randomRecipeList);
         });
     }, [])
 
-    console.log(recipes)
-
     const newRecipes = recipes.slice(-4)
-    console.log(newRecipes)
 
     function getRandomIndices(maxIndex, count) {
         const indices = [];
@@ -57,7 +55,17 @@ function App(){
     const [searchText, setSearchText] = useState("")
 
     const recipesToDisplay = recipes.filter((recipe) => (recipe.name.toLowerCase().includes(searchText.toLowerCase())) || (recipe.cuisine.toLowerCase().includes(searchText.toLowerCase())))
-    const favoriteRecipes = recipesToDisplay.filter((recipe) => recipe.favorited);
+    
+    const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+    function handleFavoriteToggle (recipe, favorited) {
+        if (favorited) {
+            setFavoriteRecipes([...favoriteRecipes, recipe]);
+        } else {
+            setFavoriteRecipes(favoriteRecipes.filter(each => each.id !== recipe.id));
+        }
+        onUpdatedRecipe(recipe);
+    };
+
     const veganRecipes = recipesToDisplay.filter((recipe) => recipe.vegan);
     const vegetarianRecipes = recipesToDisplay.filter((recipe) => recipe.vegetarian || recipe.vegan);
     
@@ -85,15 +93,15 @@ function App(){
                 </Route>
 
                 <Route path="/recipes/vegetarian">
-                    <RecipeList recipes={vegetarianRecipes}/>
+                    <RecipeList recipes={vegetarianRecipes} handleFavoriteToggle={handleFavoriteToggle} />
                 </Route>
                 
                 <Route path="/recipes/vegan">
-                    <RecipeList recipes={veganRecipes}/>
+                    <RecipeList recipes={veganRecipes} handleFavoriteToggle={handleFavoriteToggle} />
                 </Route>
 
                 <Route path="/recipes/favorites">
-                    <RecipeList recipes={favoriteRecipes} />
+                    <RecipeList recipes={favoriteRecipes} handleFavoriteToggle={handleFavoriteToggle} />
                 </Route>
 
                 <Route path="/recipes/:id">
@@ -101,7 +109,7 @@ function App(){
                 </Route>
 
                 <Route path="/recipes">
-                    <RecipeList recipes={recipesToDisplay}/>
+                    <RecipeList recipes={recipesToDisplay} handleFavoriteToggle={handleFavoriteToggle} />
                 </Route>
 
             </Switch>
