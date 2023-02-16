@@ -72,9 +72,7 @@ function App(){
     return (
         <div>
             <NavBar setSearchText={setSearchText} 
-            searchText={searchText} 
-            veganRecipes= {veganRecipes}
-            vegetarianRecipes ={vegetarianRecipes}
+            searchText={searchText}
             />
             <div className="main-body">
             <Switch>
