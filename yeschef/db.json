@@ -177,7 +177,7 @@
       "cuisine": "Asian",
       "vegetarian": true,
       "vegan": true,
-      "favorited": false
+      "favorited": true
     },
     {
       "id": 7,
