@@ -10,7 +10,9 @@ function Home({randomRecipes, newRecipes}){
 
     return(
         <div className="home">
-            <h1 className="title">yes, chef.<p>The recipe book for kitchen commanders</p></h1>
+            <img className="title__image" src="./yeschefbig.png"
+            alt= "yeschef"/>
+            <h1 className="title">The recipe book for kitchen commanders</h1>
             <h2 className="home-heading">Need some inspiration? Try one of these!</h2>
             <div className="random-recipes">
                 {randomRecipes.map((recipe) => (
