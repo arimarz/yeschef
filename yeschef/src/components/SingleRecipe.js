@@ -13,7 +13,7 @@ function SingleRecipe(){
     .then((r)=> r.json())
     .then((recipe)=> {
       setRecipe(recipe);
-      setIsLoaded(!isLoaded);
+      setIsLoaded(current => !current);
     });
   }, [id])
 
