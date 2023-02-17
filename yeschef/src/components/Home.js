@@ -1,6 +1,6 @@
 import RecipeCard from './RecipeCard'
 import {useHistory} from 'react-router-dom'
-import logo from '../yeschefbig.png'
+// import logo from '../yeschefbig.png'
 
 function Home({randomRecipes, newRecipes, handleFavoriteToggle}){
     const history = useHistory()
@@ -11,7 +11,7 @@ function Home({randomRecipes, newRecipes, handleFavoriteToggle}){
 
     return(
         <div className="home">
-            <img className="title__image" src={logo}
+            <img className="title__image" src={process.env.PUBLIC_URL + '/yeschefbig.png'}
             alt= "yeschef"/>
             <h1 className="title">The recipe book for kitchen commanders</h1>
             <h2 className="home-heading">Need some inspiration? Try one of these!</h2>
