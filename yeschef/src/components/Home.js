@@ -2,7 +2,7 @@ import RecipeCard from './RecipeCard'
 import {useHistory} from 'react-router-dom'
 import logo from '../yeschefbig.png'
 
-function Home({randomRecipes, newRecipes}){
+function Home({randomRecipes, newRecipes, handleFavoriteToggle}){
     const history = useHistory()
 
     function handleClick(id) {
@@ -26,6 +26,7 @@ function Home({randomRecipes, newRecipes}){
                         cuisine = {recipe.cuisine}
                         favorited = {recipe.favorited}
                         onSwitch = {() => handleClick(recipe.id)}
+                        handleFavoriteToggle = {handleFavoriteToggle}
                     />
                 ))}       
             </div>
@@ -41,6 +42,7 @@ function Home({randomRecipes, newRecipes}){
                         cuisine = {recipe.cuisine}
                         favorited = {recipe.favorited}
                         onSwitch = {() => handleClick(recipe.id)}
+                        handleFavoriteToggle = {handleFavoriteToggle}
                     /> 
                 ))}
             </div>

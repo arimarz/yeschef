@@ -79,7 +79,7 @@ function App(){
                 
                 <Route exact path="/">
                     <Home randomRecipes={randomRecipes}
-                    newRecipes= {newRecipes}/>
+                    newRecipes= {newRecipes} handleFavoriteToggle={handleFavoriteToggle}/>
                 </Route>
 
                 <Route path="/recipes/:id/edit">

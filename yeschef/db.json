@@ -24,7 +24,7 @@
       "cuisine": "American",
       "vegetarian": true,
       "vegan": false,
-      "favorited": true
+      "favorited": false
     },
     {
       "id": 2,
@@ -212,7 +212,7 @@
       "cuisine": "Mexican",
       "vegetarian": true,
       "vegan": true,
-      "favorited": false
+      "favorited": true
     }
   ]
 }
