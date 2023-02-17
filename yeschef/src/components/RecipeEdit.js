@@ -98,7 +98,7 @@ function RecipeEdit ({onUpdatedRecipe}){
 
     function handleSubmit(e){
         e.preventDefault();
-        fetch(`http://localhost:3001/recipes/${id}`, configObj)
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`, configObj)
           .then((resp) => resp.json())
           .then((updatedRecipe) => {
             onUpdatedRecipe(updatedRecipe);

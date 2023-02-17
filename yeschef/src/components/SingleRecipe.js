@@ -9,7 +9,7 @@ function SingleRecipe(){
   const{ id } = useParams()
 
   useEffect(() => {
-    fetch(`http://localhost:3001/recipes/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/${id}`)
     .then((r)=> r.json())
     .then((recipe)=> {
       setRecipe(recipe);
