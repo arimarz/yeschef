@@ -84,7 +84,7 @@ function NewRecipeForm ({onAddRecipe}){
 
     function handleSubmit(e){
         e.preventDefault();
-        fetch("http://localhost:3001/recipes", configObj)
+        fetch(`${process.env.REACT_APP_API_URL}`, configObj)
             .then((resp) => resp.json())
             .then((data) => {
             onAddRecipe(data);
