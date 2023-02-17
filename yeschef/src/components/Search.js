@@ -3,7 +3,7 @@ import {useState} from "react"
 
 
 function Search({setSearchText, searchText}) {
-    const [isSearchOpen, setIsSearchOpen] = useState(true);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     function toggleSearch() {
       setIsSearchOpen(prevState => !prevState);
