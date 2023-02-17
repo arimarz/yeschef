@@ -16,7 +16,7 @@ function RecipeEdit ({onUpdatedRecipe}){
     const [vegetarian, setVegetarian] = useState(false);
     
     useEffect(()=> {
-        fetch(`http://localhost:3001/recipes/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`)
             .then((r)=> r.json())
             .then((recipe) => {
                 setName(recipe.name);

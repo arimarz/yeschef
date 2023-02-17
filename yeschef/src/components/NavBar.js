@@ -9,9 +9,9 @@ function NavBar({setSearchText, searchText}) {
   return (
     <header>
       <nav>
-        {notRenderSmallLogo ? null : <Link to="/">
-            <img className = "nav__image" src="./yeschefsmall2.png" alt="yeschef"/>
-        </Link>}
+        <Link to="/">
+            <img className ="nav__image" src="./yeschefsmall2.png" alt="yeschef"/>
+        </Link>
           <div className="search-icon">
             <Search setSearchText={setSearchText} searchText={searchText}/>
           </div>

@@ -13,7 +13,7 @@ function App(){
     const [randomRecipes, setRandomRecipes] = useState([])
     
     useEffect(() => {
-        fetch("http://localhost:3001/recipes")
+        fetch(`${process.env.REACT_APP_API_URL}`)
           .then((resp) => resp.json())
           .then((data) => {
             setRecipes(data);
