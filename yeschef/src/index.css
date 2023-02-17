@@ -139,12 +139,17 @@ nav {
 .nav__image {
   background-color: white;
   border: 2px dotted orange;
-  height: 75px;
+  height: 60px;
   width: auto;
   border-radius: 50%;
   box-shadow: 
   0 0 0 2px white,
   0 0 0 4px orange;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
 }
 
 .title__image {

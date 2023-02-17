@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Search from './Search';
+import logo from '../yeschefsmall2.png';
 
 function NavBar({setSearchText, searchText}) {
   const location = useLocation();
@@ -9,9 +10,9 @@ function NavBar({setSearchText, searchText}) {
   return (
     <header>
       <nav>
-        <Link to="/">
-            <img className ="nav__image" src="./yeschefsmall2.png" alt="yeschef"/>
-        </Link>
+        {notRenderSmallLogo ? null : <Link to="/">
+            <img className = "nav__image" src={logo} alt="yeschef"/>
+        </Link>}
           <div className="search-icon">
             <Search setSearchText={setSearchText} searchText={searchText}/>
           </div>
