@@ -48,9 +48,9 @@ function SingleRecipe(){
           </ul>
         </div>
         <div className="single-nontext">
-          <span>{vegetarian ? <img className= "veg-image" src= "https://img.myloview.com/posters/vegetarian-food-diet-icon-organic-bio-eco-symbol-no-meat-vegetarian-healthy-and-nonviolent-food-round-green-vector-illustration-with-ribbon-and-leaves-for-stickers-labels-and-logos-700-179938004.jpg"/> : null}
+          <span>{vegetarian ? <img className= "veg-image" src= "https://img.myloview.com/posters/vegetarian-food-diet-icon-organic-bio-eco-symbol-no-meat-vegetarian-healthy-and-nonviolent-food-round-green-vector-illustration-with-ribbon-and-leaves-for-stickers-labels-and-logos-700-179938004.jpg" alt="vegetarian-recipe"/> : null}
           </span>
-          <span>{vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg"/> : null }
+          <span>{vegan ? <img  className= "veg-image" src= "https://t4.ftcdn.net/jpg/02/99/88/93/360_F_299889394_1prIwRtf6ndCfZegWOEeJRPKc56dTHFK.jpg" alt="vegan-recipe" /> : null }
           </span>
         </div>
     </div>
